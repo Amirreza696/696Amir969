@@ -1,0 +1,38 @@
+# Import the modules
+import random
+import time
+import os
+import winsound
+
+# Define the fart sound file path
+fart_sound = "C:\\Users\\YourName\\Documents\\fart.wav"
+
+# Define the function to play the fart sound
+def play_fart():
+    winsound.PlaySound(fart_sound, winsound.SND_FILENAME)
+
+# Define the function to write farts on the screen
+def write_fart():
+    # Choose a random number of farts
+    num_farts = random.randint(1, 10)
+    # Choose a random color for the farts
+    color = random.choice(["red", "green", "blue", "yellow", "magenta", "cyan", "white"])
+    # Change the color of the text
+    os.system(f"color {color}")
+    # Print the farts
+    print("Fart" * num_farts)
+
+# Start the prank
+while True:
+    # Choose a random time interval between 1 and 10 seconds
+    interval = random.randint(1, 10)
+    # Wait for the interval
+    time.sleep(interval)
+    # Choose a random action: play sound or write text
+    action = random.choice(["sound", "text"])
+    # Perform the action
+    if action == "sound":
+        play_fart()
+    else:
+        write_fart()
+
